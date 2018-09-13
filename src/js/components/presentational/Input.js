@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-const Input = ({ label, text, type, id, value, handleChange }) => (
+import { connect } from "react-redux";
+const Input = (props) => {
+    const { label, text, type, id, value, handleChange }=props;
+    console.log(props)
+    return(
   <div className="form-group">
     <label htmlFor={label}>{text}</label>
     <input
@@ -12,7 +16,7 @@ const Input = ({ label, text, type, id, value, handleChange }) => (
       required
     />
   </div>
-);
+);}
 Input.propTypes = {
   label: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
@@ -21,4 +25,11 @@ Input.propTypes = {
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired
 };
-export default Input;
+const mapStateToProps = state => { 
+    console.log(state)
+    return { user: state.user };
+  };
+  const mapToActions=()=>{
+      return{}
+  }
+export default connect(mapStateToProps,mapToActions)( Input); 
