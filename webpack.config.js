@@ -1,6 +1,10 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+let HtmlWebPackPlugin = require("html-webpack-plugin");
 var path = require('path');
 module.exports = {
+    devServer: {
+        clientLogLevel: 'error',
+        historyApiFallback: true
+    },
     module: {
         rules: [{
             test: /\.js$/,
@@ -9,6 +13,12 @@ module.exports = {
                 loader: "babel-loader"
             }
         },
+        
+        {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: ['eslint-loader']
+          },
         {
             test: /\.html$/,
             use: [
@@ -49,5 +59,5 @@ module.exports = {
             filename: "./index.html"
         })
     ],
-    devtool: 'inline-source-map'
+    devtool: 'cheap-module-source-map'
 }

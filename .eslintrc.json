@@ -1,0 +1,47 @@
+    {
+    "parser": "babel-eslint",
+    
+    "root": true,
+    "plugins": [
+        "react","import"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": { 
+        "semi": 1, 
+        "no-console": 1,
+        "react/prop-types": [1],
+        "no-unused-vars":"warn"
+    },
+    "env": {
+        "es6": true,
+      "browser": true,
+      "node": true,
+      "jquery": true,
+      "jest": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended", "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:react/recommended"],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "16.5.0"
+        },
+        "import/resolver": {
+            "node": {
+              "extensions": [
+                ".js",
+                ".jsx"
+              ]
+            }
+          }
+    }
+  }
