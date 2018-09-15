@@ -1,5 +1,4 @@
-export default (state={userLogin:false},action)=>{
-    console.log(state)
+export default (state={userLogin:false},action)=>{ 
     switch(action.type){
     case "ADD_USER":
         return action.payload; 
