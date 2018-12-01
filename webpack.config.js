@@ -6,15 +6,17 @@ module.exports = {
         clientLogLevel: 'error',
         historyApiFallback: true,
         hot: true,
-        inline:true
+        inline:true, 
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+          }
     },
-    entry: [
-        'babel-polyfill',
-        'react-hot-loader/patch',
-        "webpack-dev-server/client?http://localhost:8080",
-        "webpack/hot/only-dev-server",
-        './src/index'
+    entry: [ 
+    path.resolve(__dirname, 'src/index.js')
     ],
+    watch:true,
+    target: 'web',
     module: {
         rules: [{
             test: /\.js$/,
@@ -67,8 +69,9 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/index.html",
             filename: "./index.html"
-        }),
-        new webpack.HotModuleReplacementPlugin()
+        }),  
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
     ],
     devtool: 'cheap-module-source-map'
 }

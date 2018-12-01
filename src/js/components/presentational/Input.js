@@ -22,11 +22,10 @@ Input.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   handleChange: PropTypes.func.isRequired
 };
-const mapStateToProps = state => { 
-    console.log(state)
+const mapStateToProps = state => {  
     return { user: state.user };
   };
   const mapToActions=()=>{

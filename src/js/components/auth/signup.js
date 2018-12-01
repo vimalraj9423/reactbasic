@@ -6,15 +6,16 @@ import socket from "../socket/index";
 class SignUp extends React.Component{
     constructor(){
         super();
-        this.onClickRegister=this.onClickRegister.bind(this);
+        this.onClickRegister=this.onClickRegister.bind(this); 
     }
     onClickRegister(){
-        socket.connectSocket();
+        // socket.connectSocket();
         this.props.updateLogin();
     }
-    render(){
-        console.log("Ss")
-        return (<form>
+    render(){ 
+        return (
+            <div className="row">
+        <form>
 <Input
                     text="user Name"
                     label="user"
@@ -30,9 +31,11 @@ class SignUp extends React.Component{
                     id="passward" 
                     ref={el=>this.password=el}
                     handleChange={this.handleChange}
-                /> dfdffdfdfddfdff
+                /> 
                 <a className="btn btn-primary" href="#" role="button" onClick={this.onClickRegister}>submit</a>
-        </form>);
+        </form>
+        </div>
+        );
     }
 }
 

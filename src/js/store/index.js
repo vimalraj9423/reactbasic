@@ -7,7 +7,8 @@ import createHistory from 'history/createBrowserHistory';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 export const history = createHistory();
-
+const reduxDevTools =
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 function getstore(){
     const reactRouterMiddleware = routerMiddleware(history);
     const middlewares = [
@@ -21,6 +22,7 @@ function getstore(){
     ];
     const store=createStore(
         rootReducer, // new root reducer with router state 
+        reduxDevTools,
        compose(
          applyMiddleware(
           ...middlewares

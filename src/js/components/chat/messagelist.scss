@@ -1,0 +1,14 @@
+.yours,.others{
+    max-width: 80%;
+    padding: 5px 21px;
+    width: max-content;
+    background: beige;
+    margin: 22px;
+    border-radius: 29px;
+    word-wrap: break-word;
+}
+.yours{
+    float: right;
+}
+.message-list{    height: calc(100vh - 119px);    overflow-y: auto;
+}

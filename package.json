@@ -3,17 +3,18 @@
   "version": "1.0.1",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --hot  --open --mode development"
+    "start": "webpack-dev-server   --open --mode development"
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-1": "^7.0.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
-    "eslint": "^5.5.0",
+    "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -24,9 +25,9 @@
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.3",
     "prop-types": "^15.6.2",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
-    "react-hot-loader": "^4.3.7",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-hot-loader": "^4.3.8",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^5.0.0-alpha.9",
@@ -35,13 +36,14 @@
     "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
-    "webpack": "^4.18.0",
+    "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8",
     "webpack-hot-middleware": "^2.24.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0", 
+    "babel-polyfill": "^6.26.0",
+    "event-source-polyfill": "0.0.16",
     "extract-text-webpack-plugin": "^3.0.2",
     "socket.io-client": "^2.1.1"
   }
