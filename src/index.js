@@ -8,7 +8,7 @@ import { hot } from 'react-hot-loader';
 import React from "react";
 
 import ReactDOM from "react-dom";
-dfdfd
+
 
 const store = configureStore();
 const wrapper = document.getElementById("create-article-form");
